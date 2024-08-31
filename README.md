@@ -2,6 +2,12 @@
 
 This project is designed to collect physiological data using an Arduino connected to multiple sensors. The data is used to train AI models for tasks such as polygraphy, lie detection, or other physiological response analysis. The system captures biometric data, including heart rate (BPM), galvanic skin response (GSR), and body temperature, and logs the data into a CSV file for machine learning purposes.
 
+## System Overview
+
+![Polygraph System Setup](photo2.jpeg)
+
+This image shows the Arduino setup with the connected sensors (BPM, GSR, and temperature sensors).
+
 ## Features
 - **BPM Measurement**: Tracks heart rate using a BPM sensor (e.g., MAX30100/MAX30102).
 - **GSR Measurement**: Monitors galvanic skin response (electrodermal activity) via an analog GSR sensor.
@@ -16,6 +22,17 @@ This project is designed to collect physiological data using an Arduino connecte
 - **GSR Sensor**: For galvanic skin response measurements
 - Connecting wires and breadboard
 
+## Circuit Diagram
+
+![Circuit Diagram](photo1.jpeg)
+
+This diagram illustrates the connections between the Arduino, sensors, and other components.
+
+### Wiring Details:
+- **BPM Sensor (MAX30100/MAX30102)**: Connected via I2C (SCL and SDA pins)
+- **Temperature Sensor (MLX90614)**: Connected via I2C (SCL and SDA pins)
+- **GSR Sensor**: Connected to an analog input pin (e.g., A0)
+
 ## Software Requirements
 - **Arduino IDE**: For uploading the Arduino code to the board
 - **Python 3.x**: For running the data collection script
@@ -24,6 +41,7 @@ This project is designed to collect physiological data using an Arduino connecte
   - Adafruit MLX90614 Library (for temperature sensor)
 - **Python Libraries**:
   - `pyserial`: To handle serial communication with the Arduino
+  - `pandas`: To log and manage the sensor data
 
 ## How It Works
 1. **Sensor Data Collection**: The Arduino collects biometric data from the connected sensors (BPM, GSR, and temperature) and transmits it via serial communication to a connected computer.
